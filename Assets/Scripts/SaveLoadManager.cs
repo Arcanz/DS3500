@@ -1,27 +1,64 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.IO;
-using System.Runtime.Serialization.Formatters;
 
 
 //Singleton
 public class SaveLoadManager
 {
 	public static SaveLoadManager instance = new SaveLoadManager();
+	public Savefile savefile;
 	
-	public OurSavefile savefile;
+	public string SaveFolderLoc = "/Saves";
+	public string SaveFileLoc = "/save.txt";
 	
-	public void SaveRealSaveFile()
+	
+	public bool LoadSaveFile()
 	{
-		if(false == false)
-		{}
-		string path = Application.dataPath + "/mysave.txt";
-		bool fileExists = File.Exists(path);
-		
-		if(fileExists)
+		if(!Directory.Exists(Application.dataPath + SaveFolderLoc))
 		{
-			
+			Directory.CreateDirectory(Application.dataPath + SaveFolderLoc);
 		}
+		
+		string path = Application.dataPath + SaveFolderLoc + SaveFileLoc;
+		
+		savefile = new Savefile();
+		
+		if(File.Exists(path))
+		{
+			StreamReader sr = new StreamReader(path);
+			string s = sr.ReadToEnd();
+			sr.Close();
+			
+			savefile.load(s);
+			return true;
+		}
+		else
+		{
+			Debug.Log("No save file found");
+			return false;
+		}
+		
+	}
+	
+	public void SaveSaveFile()
+	{
+		if(!Directory.Exists(Application.dataPath + SaveFolderLoc))
+		{
+			Directory.CreateDirectory(Application.dataPath + SaveFolderLoc);
+		}
+		
+		
+		string path = Application.dataPath + SaveFolderLoc + SaveFileLoc;
+		
+		if(File.Exists(path))
+		{
+			File.Delete(path);
+		}
+		
+		StreamWriter sw = new StreamWriter(path);
+		sw.WriteLine(savefile.save());
+		sw.Close();
 	}
 
 	
@@ -55,7 +92,7 @@ public class SaveLoadManager
 }
 
 [System.Serializable]
-public class OurSavefile
+public class Savefile
 {
 	public Vector3 playerPosition;
 	public Vector2 guiPosition;
@@ -75,6 +112,6 @@ public class OurSavefile
 		playerPosition = new Vector3(float.Parse(split[0]),0, float.Parse(split[1]));
 		
 		string[] split2 = lines[1].Split(':');
-		guiPosition = new Vector2 (float.Parse(split[0]), float.Parse(split[1]));
+		guiPosition = new Vector2 (float.Parse(split2[0]), float.Parse(split2[1]));
 	}
 }
