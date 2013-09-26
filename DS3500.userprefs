@@ -1,12 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\HexGrid.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HexGrid.cs">
     <Files>
-      <File FileName="Assets\HexGrid.cs" Line="40" Column="15" />
+      <File FileName="Assets\Scripts\HexGrid.cs" Line="33" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="D:\GitHub\DS3500\Assets\Scripts\HexGrid.cs" line="28" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
