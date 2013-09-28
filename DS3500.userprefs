@@ -2,12 +2,16 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HexGrid.cs">
     <Files>
-      <File FileName="Assets\Scripts\HexGrid.cs" Line="33" Column="41" />
+      <File FileName="Assets\Scripts\HexGrid.cs" Line="46" Column="32" />
+      <File FileName="Assets\Scripts\HexTestTutorial.cs" Line="39" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="D:\GitHub\DS3500\Assets\Scripts\HexGrid.cs" line="28" />
+      <Breakpoint file="D:\UnityProjects\DS3500\Assets\Scripts\HexTestTutorial.cs" line="39" />
+      <Breakpoint file="D:\UnityProjects\DS3500\Assets\Scripts\HexGrid.cs" line="95" />
+      <Breakpoint file="D:\UnityProjects\DS3500\Assets\Scripts\HexGrid.cs" line="118" />
+      <Breakpoint file="D:\UnityProjects\DS3500\Assets\Scripts\HexGrid.cs" line="81" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
