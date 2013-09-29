@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\HexGrid.cs">
     <Files>
-      <File FileName="Assets\Scripts\HexGrid.cs" Line="138" Column="6" />
-      <File FileName="Assets\Scripts\MoveSample.cs" Line="7" Column="116" />
+      <File FileName="Assets\Scripts\HexGrid.cs" Line="123" Column="66" />
+      <File FileName="Assets\Scripts\MoveSample.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

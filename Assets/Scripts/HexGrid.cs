@@ -100,7 +100,7 @@ public class HexGrid : MonoBehaviour {
 	void createGrid()
 	{
 		Vector2 gridSize = calcGridSize();
-		GameObject hexGridGo = new GameObject("TestGrid");
+		GameObject hexGridGo = new GameObject("HexGrid");
 		
 		for (int y = 0; y<gridSize.y; y++)
 		{
@@ -120,6 +120,7 @@ public class HexGrid : MonoBehaviour {
 				hex.transform.parent = hexGridGo.transform;
 			}
 		}
+		hexGridGo.name = "HexGrid, Size {"+gridSize.x+","+gridSize.y+"}";
 		GridSpawned = true;
 		
 	}
@@ -131,17 +132,19 @@ public class HexGrid : MonoBehaviour {
 		if(GridSpawned)
 		{
 			//Mess
-			Vector2 spawnlocation = new Vector2(0,0);
+			/*Vector2 spawnlocation = new Vector2(0,0);
 			float cubeWidth = player.renderer.bounds.size.x;
 			GameObject Newplayer = (GameObject)Instantiate(player,calculateWorldPosition(spawnlocation), player.transform.rotation);
 			Newplayer.transform.position = new Vector3(Newplayer.transform.position.x - (cubeWidth/2) , 3f , Newplayer.transform.position.z);
-			//iTween.MoveBy(Newplayer, iTween.Hash("x", 2, "easeType", "easeInOutExpo", "loopType", "pingPong", "delay", .1));
+			iTween.MoveBy(Newplayer, iTween.Hash("x", 2, "easeType", "easeInOutExpo", "loopType", "pingPong", "delay", .1));
+		*/
 		}
 		
-		Vector2 singleTile = new Vector2(1,2);
+		/*Vector2 singleTile = new Vector2(1,2);
 		GameObject hex = (GameObject)Instantiate(hexTile);
 		hex.transform.position = calculateWorldPosition(singleTile);
 		hex.name = "TESTTILE @ 1,2";
 		hex.renderer.material.color = Color.red;
+		*/
 	}
 }
