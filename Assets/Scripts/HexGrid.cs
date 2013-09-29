@@ -5,6 +5,8 @@ public class HexGrid : MonoBehaviour {
 
 	public GameObject hexTile;
 	public GameObject groundPlane;
+	public GameObject player;
+	private bool GridSpawned = false;
 	
 	private float hexWidth;
 	private float hexLength;
@@ -118,12 +120,23 @@ public class HexGrid : MonoBehaviour {
 				hex.transform.parent = hexGridGo.transform;
 			}
 		}
+		GridSpawned = true;
 		
 	}
 	void Start () 
 	{
 		SetSizes();
 		createGrid();
+		
+		if(GridSpawned)
+		{
+			//Mess
+			Vector2 spawnlocation = new Vector2(0,0);
+			float cubeWidth = player.renderer.bounds.size.x;
+			GameObject Newplayer = (GameObject)Instantiate(player,calculateWorldPosition(spawnlocation), player.transform.rotation);
+			Newplayer.transform.position = new Vector3(Newplayer.transform.position.x - (cubeWidth/2) , 3f , Newplayer.transform.position.z);
+			//iTween.MoveBy(Newplayer, iTween.Hash("x", 2, "easeType", "easeInOutExpo", "loopType", "pingPong", "delay", .1));
+		}
 		
 		Vector2 singleTile = new Vector2(1,2);
 		GameObject hex = (GameObject)Instantiate(hexTile);
