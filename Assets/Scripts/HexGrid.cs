@@ -132,12 +132,26 @@ public class HexGrid : MonoBehaviour {
 		if(GridSpawned)
 		{
 			//Mess
-			/*Vector2 spawnlocation = new Vector2(0,0);
+			Vector2 spawnlocation = new Vector2(0,0);
 			float cubeWidth = player.renderer.bounds.size.x;
 			GameObject Newplayer = (GameObject)Instantiate(player,calculateWorldPosition(spawnlocation), player.transform.rotation);
 			Newplayer.transform.position = new Vector3(Newplayer.transform.position.x - (cubeWidth/2) , 3f , Newplayer.transform.position.z);
-			iTween.MoveBy(Newplayer, iTween.Hash("x", 2, "easeType", "easeInOutExpo", "loopType", "pingPong", "delay", .1));
-		*/
+			//iTween.MoveBy(Newplayer, iTween.Hash("x", 2, "easeType", "easeInOutExpo", "loopType", "pingPong", "delay", .1));
+			
+//			ArrayList<Vector3>  vectorArray;
+			
+		
+			Vector3[] pathArray = new Vector3[]{calculateWorldPosition(new Vector2(0,2)),calculateWorldPosition(new Vector2(0,4)),calculateWorldPosition(new Vector2(6,6))};
+			Hashtable myHash = new Hashtable();
+			myHash["x"] = 5;
+			myHash["easeType"] = iTween.EaseType.easeInBack;
+			myHash["path"] = pathArray;
+			
+			
+			iTween.MoveTo(Newplayer,myHash);
+			
+			
+		
 		}
 		
 		/*Vector2 singleTile = new Vector2(1,2);
